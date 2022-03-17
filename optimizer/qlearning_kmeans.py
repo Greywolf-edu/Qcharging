@@ -1,7 +1,7 @@
 import numpy as np
 from scipy.spatial import distance
 
-from optimizer.utils import init_function, q_max_function, reward_function, network_partition, network_partition_v2
+from optimizer.utils import init_function, q_max_function, reward_function, network_clustering, network_clustering_v2
 from simulator.node.utils import find_receiver
 
 
@@ -63,4 +63,4 @@ class Q_learningv2:
             # print(self.action_list[self.state])
     
     def net_partition(self, net=None, netpart_func=network_partition):
-        self.action_list = network_partition_v2(self, network=net, nb_cluster=self.nb_action)
+        self.action_list = network_clustering(self, network=net, nb_cluster=self.nb_action)

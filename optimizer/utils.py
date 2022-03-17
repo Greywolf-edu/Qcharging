@@ -129,13 +129,13 @@ def get_charging_time(network=None, mc = None, q_learning=None, time_stem=0, sta
         return t[arg_min]
     return 0
 
-def network_partition(optimizer, network=None, nb_cluster=81):
+def network_clustering(optimizer, network=None, nb_cluster=81):
     X = []
     Y = []
     for node in network.node:
         node.set_check_point(200)
         X.append(node.location)
-        Y.append(node.avg_energy)
+        Y.append(node.avg_energy**0.5)
     X = np.array(X)
     Y = np.array(Y)
     print(Y)
@@ -151,7 +151,7 @@ def network_partition(optimizer, network=None, nb_cluster=81):
     network_plot(network=network, charging_pos=charging_pos)
     return charging_pos
 
-def network_partition_v2(optimizer, network=None, nb_cluster=81):
+def network_clustering_v2(optimizer, network=None, nb_cluster=81):
     X = []
     Y = []
     min_node = 1000
