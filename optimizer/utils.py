@@ -175,10 +175,10 @@ def network_clustering_v2(optimizer, network=None, nb_cluster=81):
         charging_pos.append((int(pos[0]), int(pos[1])))
     charging_pos.append(para.depot)
     print(charging_pos, file=open('log/centroid.txt', 'w'))
-    node_distribution_plot(network=network, charging_pos=charging_pos)
-    network_plot(network=network, charging_pos=charging_pos)
+    # node_distribution_plot(network=network, charging_pos=charging_pos)
+    # network_plot(network=network, charging_pos=charging_pos)
     return charging_pos
-
+    
 def node_distribution_plot(network, charging_pos):
     x_node = []
     y_node = []
