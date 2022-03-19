@@ -107,7 +107,7 @@ def resume_simulating():
             break
         else:
             print('No checkpoint found!!!')
-    print('--------------------------------------')
+    print('------------------------------------------------------------------------------')
 
     checkpoint = None
     checkpoint_file = 'checkpoint/checkpoint_{}_{}.pkl'.format(experiment_type, experiment_index)
@@ -125,13 +125,19 @@ def resume_simulating():
     lifetime    = net.simulate(exp_type=experiment_type, exp_index=experiment_index, nb_run=nb_run, optimizer=optimizer, t=time, dead_time=dead_time, file_name=log_file)
 
 # Read experiment data into Dataframe
-print('-----------WRSN Simulator ------------')
-print('---------------v1.2.1-----------------')
+print('------------------------------------------------------------------------------')
+print(' _       ______  _____ _   __   _____ _                 __      __            ')
+print('| |     / / __ \/ ___// | / /  / ___/(_)___ ___  __  __/ /___ _/ /_____  _____')
+print('| | /| / / /_/ /\__ \/  |/ /   \__ \/ / __ `__ \/ / / / / __ `/ __/ __ \/ ___/')
+print('| |/ |/ / _, _/___/ / /|  /   ___/ / / / / / / / /_/ / / /_/ / /_/ /_/ / /    ')
+print('|__/|__/_/ |_|/____/_/ |_/   /____/_/_/ /_/ /_/\__,_/_/\__,_/\__/\____/_/     ')
+print('                                                                              ')
+print('-------------------------------------v1.2.1-----------------------------------')
 print('Select one way to run Simulator:')
 print('\t1. Start')
 print('\t2. Resume (Requires checkpoint.pkl and log file)')
 simulation_type = int(input('Confirm your selection (1/2): '))
-print('--------------------------------------')
+print('------------------------------------------------------------------------------')
 if (simulation_type == 1):
     start_simulating()
 else:
