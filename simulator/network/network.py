@@ -62,6 +62,12 @@ class Network:
         nb_dead = self.count_dead_node()
         nb_package = self.count_package()
         dead_time = dead_time
+
+        if t == 0:
+            with open(file_name, "w") as information_log:
+                writer = csv.DictWriter(information_log, fieldnames=["time", "nb_dead_node", "nb_package"])
+                writer.writeheader()
+        
         t = t
         while t <= max_time and nb_package==len(self.target):
             t = t + 1

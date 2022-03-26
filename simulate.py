@@ -1,5 +1,4 @@
 import csv
-from pickletools import optimize
 import pandas as pd
 import random
 import pickle
@@ -133,6 +132,7 @@ print('| |/ |/ / _, _/___/ / /|  /   ___/ / / / / / / / /_/ / / /_/ / /_/ /_/ / 
 print('|__/|__/_/ |_|/____/_/ |_/   /____/_/_/ /_/ /_/\__,_/_/\__,_/\__/\____/_/     ')
 print('                                                                              ')
 print('-------------------------------------v1.2.1-----------------------------------')
+print('---------------------------Qlearning Kmeans Optimization----------------------')
 print('Select one way to run Simulator:')
 print('\t1. Start')
 print('\t2. Resume (Requires checkpoint.pkl and log file)')
