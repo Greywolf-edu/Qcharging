@@ -166,9 +166,11 @@ def network_clustering_v2(optimizer, network=None, nb_cluster=81):
             Y.append(node.avg_energy)
     X = np.array(X)
     Y = np.array(Y)
-    # print(Y)
+    print(Y)
     d = np.linalg.norm(Y)
     Y = Y/d
+    print(d)
+    print(Y)
     kmeans = KMeans(n_clusters=nb_cluster, random_state=0).fit(X)
     charging_pos = []
     for pos in kmeans.cluster_centers_:
@@ -231,6 +233,6 @@ def network_plot(network, charging_pos):
     d = np.linalg.norm(c_node)
     c_node = c_node / d * 80
     plt.scatter(x_node, y_node, s = c_node)
-    # plt.scatter(x_centroid, y_centroid, c='red', marker='^')
+    plt.scatter(x_centroid, y_centroid, c='red', marker='^')
     # plt.hist(c_node, bins=100)
     plt.show()
